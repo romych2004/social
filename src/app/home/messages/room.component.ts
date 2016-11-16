@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import '../../common/rxjs';
 
 import { MessagesService } from './messages.service';
 import { Message } from './message';

@@ -1,8 +1,6 @@
 import { OnInit, Component } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 
-import 'rxjs/add/operator/filter';
-
 import '../styles.css';
 
 import { ErrorService } from './common';

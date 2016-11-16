@@ -6,7 +6,6 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { AppError } from './error';
 
 import { Observable } from 'rxjs/Observable';
-import '../rxjs';
 
 @Injectable()
 export class ErrorService {
