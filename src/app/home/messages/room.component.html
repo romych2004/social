@@ -1,0 +1,7 @@
+<div class="ui segment loading transparent" *ngIf="loading">Loading messages</div>
+<div *ngIf="!loading">
+	<div class="" *ngFor="let message of messages">
+		{{message.author.fullName}}
+		<p class="html-content">{{message.content}}</p>
+	</div>
+</div>

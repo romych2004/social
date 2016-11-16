@@ -1,0 +1,5 @@
+<sm-popup #popupError class='negative message'>
+	<i class="close icon" (click)="popupError.hide()"></i>
+	<div class="header">{{lastError?.title}}</div>
+	{{lastError?.text}}
+</sm-popup>

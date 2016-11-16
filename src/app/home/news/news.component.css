@@ -1,0 +1,18 @@
+textarea {
+	width: 100% !important;
+	max-width: 100%;
+	outline: 0;
+}
+
+textarea[rows="1"] {
+	line-height: 2.4rem;
+}
+
+.ui.card {
+	width: 100%;
+}
+
+:host {
+	margin-right: 300px;
+    display: block;
+}

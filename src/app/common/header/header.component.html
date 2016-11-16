@@ -1,0 +1,10 @@
+<my-sm-header title="Angular2" class="inverted teal fixed">
+	<a sm-item routerLink="/home">Home</a>
+ 	<a sm-item routerLink="/admin">Admin</a>
+
+	<sm-menu class="menu right secondary">
+		<sm-dropdown *ngIf="user" class="labeled" title="{{user.fullName}}" [options]="{on: 'hover'}">
+			<sm-item (click)="logout()">Logout</sm-item>
+		</sm-dropdown>
+	</sm-menu>
+</my-sm-header>

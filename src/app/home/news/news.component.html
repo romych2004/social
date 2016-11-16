@@ -1,0 +1,32 @@
+<div class="ui segment loading transparent" *ngIf="loading">Loading news</div>
+<div *ngIf="!loading">
+	<div class="ui transparent input fluid">
+		<textarea [(ngModel)]="content" placeholder="Add news" autosize rows="1" name="create-news"></textarea>
+	</div>
+
+	<sm-button class="{{buttonClass}}" (click)="createNews($event)">Create news</sm-button>
+	<div class="cards">
+		<div class="ui card" *ngFor="let item of items">
+			<div class="content">
+				<div class="right floated meta">2h</div>
+				<img class="ui avatar image" src="http://semantic-ui.com/images/avatar/large/elliot.jpg"> {{item.author?.fullName}}
+			</div>
+			<div class="content html-content" [innerHTML]="item.content">
+			</div>
+			<div class="content">
+				<span class="right floated">
+          		<i class="heart like icon" [class.outline]="!item.likedByMe" (click)="toggleLike(item, $event)"></i>
+				 {{item.likesCount}}
+        	</span>
+				<i class="comment icon"></i>{{item.commentsCount}} comment(s)
+			</div>
+			<div class="extra content">
+				<div class="ui transparent left icon input fluid right labeled">
+					<i class="comment outline icon"></i>
+					<textarea autosize placeholder="Add Comment..." rows="1"></textarea>
+					<button class="ui label button primary small">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

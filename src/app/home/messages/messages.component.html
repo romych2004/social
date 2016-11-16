@@ -1,0 +1,20 @@
+<div class="ui segment loading transparent" *ngIf="loading">Loading messages</div>
+<div *ngIf="!loading">
+	<div class="cards">
+		<a class="ui card" *ngFor="let room of rooms" routerLink="{{room.id}}">
+			<div class="content">
+				<div class="meta left floated">
+					<a class="ui avatar image">
+						<img src="http://semantic-ui.com/images/avatar/large/elliot.jpg">
+					</a>
+					{{room.lastMessage.author.fullName}}
+				</div>
+				<span class="right floated">
+          			<i class="users icon"></i>
+					{{room.membersCount}}
+        		</span>
+				<div class="description html-content" [innerHTML]="room.lastMessage.content"></div>
+			</div>
+		</a>
+	</div>
+</div>

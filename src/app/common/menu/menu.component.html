@@ -1,0 +1,9 @@
+<div class="{{styleClass}}">
+	<my-sm-sticky [options]="{offset: 50, observeChanges: true, context: '#content'}" styleClass="bound top">
+		<sm-menu class="vertical pointing">
+			<a sm-item *ngFor="let item of items" routerLink="{{item.url}}" routerLinkActive="active" [icon]="item.icon">
+				{{item.html}}
+			</a>
+		</sm-menu>
+	</my-sm-sticky>
+</div>
