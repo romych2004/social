@@ -1,0 +1,138 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+	margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-width: 320px;
+    background: #FFF;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    line-height: 1.4285em;
+    color: rgba(0,0,0,.87);
+    font-smoothing: antialiased;
+}
+
+.main.container {
+    margin-top: 6em;
+}
+
+menu, ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#page .full.height {
+    background-color: #FFFFFF;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+#page .full.height > .toc {
+    position: relative;
+    z-index: 1;
+    width: 250px;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+
+#page .article {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    overflow: auto;
+    min-width: 0px;
+}
+
+.ui.popup.negative.message {
+    border-color: #E0B4B4;
+    box-shadow: 0 0 0 1px rgba(224, 180, 180,.22) inset,0 0 0 0 transparent;
+}
+
+.ui.popup.negative.message::before {
+    box-shadow: -1px -1px 0 0 #E0B4B4;
+}
+
+.ui.popup.negative.message>.content {
+    margin-right: 10px;
+}
+
+.ui.popup.message>.content>.close.icon {
+    cursor: pointer;
+    position: absolute;
+    margin: 0;
+    /*top: .78575em;*/
+    right: .5em;
+    opacity: .7;
+    -webkit-transition: opacity .1s ease;
+    transition: opacity .1s ease;
+}
+
+.cards {
+    padding: 1px
+}
+.cards .ui.card {
+   /* width: 100%;*/
+}
+
+.ui.transparent[class*="left icon"].input > textarea {
+    margin-left: 2em !important;
+    padding-right: 0em !important;
+}
+
+.ui.transparent.input textarea {
+    border-color: transparent !important;
+    background-color: transparent !important;
+    padding: 0em !important;
+    box-shadow: none !important;
+}
+
+.ui.card a {
+    position: relative;
+}
+.ui.card a::before {
+    position: absolute;
+    top: auto;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #4183C4;
+    content: '';
+    -webkit-transition: all 0.2s;
+    -webkit-backface-visibility: hidden;
+    transition: all 0.2s;
+    backface-visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+}
+
+.ui.card a:hover::before {
+    background-color: #2C76BF;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.ui[class*="right labeled"].input textarea+.label {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.ui.labeled.input > .button.small {
+    font-size: 0.92857143rem;
+}
+
+.ui.segment.loading.transparent {
+    border: 0;
+    box-shadow: none;
+    height: 100px;
+}

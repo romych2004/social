@@ -18,7 +18,7 @@ exports.getRooms = function(params) {
 	
 	result.map(function(room) {
 		room.membersCount = room.membersId.length;
-		room.lastMessage = exports.getMessageById(items[items.length-1]);
+		room.lastMessage = exports.getMessageById(items[items.length-1].id);
 	});
 
 	return result;
