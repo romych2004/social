@@ -1,30 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
 import { NgSemanticModule } from 'ng-semantic';
-
-import { AutosizeTextareaDirective } from '../../common';
-import { HTMLContentDirective } from '../../common';
+import { FormsModule } from '@angular/forms';
 
 import { NewsRoutingModule } from './news-routing.module';
 
 import { NewsComponent } from './news.component';
 import { NewsResolve } from './news-resolve';
 
+import { CommonModule as AppCommonModule } from '../../common';
 
 @NgModule({
 	imports: [
 		CommonModule,
+		NgSemanticModule,
 		FormsModule,
-		NewsRoutingModule,
-		NgSemanticModule
+		AppCommonModule,
+		NewsRoutingModule
 	],
 	exports: [],
 	declarations: [
-        NewsComponent,
-		AutosizeTextareaDirective,
-		HTMLContentDirective
+        NewsComponent
 	],
 	providers: [
 		NewsResolve

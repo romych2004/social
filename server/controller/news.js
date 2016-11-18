@@ -26,6 +26,7 @@ exports.getNews = function(params) {
 
 exports.createNews = function(parentId, item) {
 	item.parentId = parentId;
+	item.authorId = item.author.id;
 	delete item.author;
 	items.splice(0, 0, item);
 	item.id = 'news-' + items.length;

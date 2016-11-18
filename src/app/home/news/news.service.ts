@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { UserService } from '../../common';
+import { UserService, ErrorService } from '../../common';
 
 import { NewsItem } from './news-item';
 
@@ -19,7 +19,7 @@ export class NewsService {
 
 	private parentIds: Array<string> = new Array<string>();
 
-	constructor(private http: Http, private userService: UserService, private route: ActivatedRoute) {
+	constructor(private http: Http, private userService: UserService, private route: ActivatedRoute, private errorService: ErrorService) {
 	}
 
 	addParentId(type:string) {
@@ -35,7 +35,8 @@ export class NewsService {
 	getNews(start: number, count: number, parentId?: string): Observable<NewsItem[]> {
 		let id = parentId ? parentId : this.parentIds[this.parentIds.length - 1];
 		return this.http.get(this.url + '/' + id)
-			.map((r: Response) => r.json().data as NewsItem[]);
+			.map((r: Response) => r.json().data as NewsItem[])
+			.catch(this.errorService.handleError);;
 	}
 
 	create(item: NewsItem, parentId?: string) {
@@ -45,7 +46,8 @@ export class NewsService {
 				let result = r.json().data as NewsItem;
 				Object.assign(item, result);
 				return result;
-			});
+			})
+			.catch(this.errorService.handleError);;
 	}
 
 

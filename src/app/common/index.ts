@@ -1,5 +1,4 @@
-export * from './autosize-textarea.directive';
-export * from './html-content.directive';
+export * from './common.module';
 
 export * from './error/error';
 export * from './error/error.service';

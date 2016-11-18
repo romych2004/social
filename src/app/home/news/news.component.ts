@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 
-import { AutosizeTextareaDirective, UserService, User, AppError, ErrorService, LikeService } from '../../common';
+import { UserService, User, AppError, ErrorService, LikeService } from '../../common';
 import { NewsService } from './news.service';
 
 import { NewsItem } from './news-item';

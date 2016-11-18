@@ -2,6 +2,12 @@
 <div *ngIf="!loading">
 	<div class="" *ngFor="let message of messages">
 		{{message.author.fullName}}
-		<p class="html-content">{{message.content}}</p>
+		<div class="html-content">{{message.content}}</div>
 	</div>
+
+	<div class="ui transparent input fluid">
+		<textarea [(ngModel)]="content" placeholder="Add message" autosize rows="1"></textarea>
+	</div>
+
+	<sm-button class="positive" (click)="createMessage($event)">Send</sm-button>
 </div>

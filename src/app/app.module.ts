@@ -16,7 +16,6 @@ import { MenuModule, UserService, HeaderComponent, SemanticHeaderComponent, Menu
 
 import { NewsService } from './home/news/news.service';
 
-
 // #R auth
 import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './login/login.component';

@@ -5,8 +5,8 @@ var rooms = [
 ];
 
 var items = [
-	{ authorId: 'user-1', content: 'abracadabra', id: 'message-1', parentId: 'room-1', date: '' },
-	{ authorId: 'user-2', content: 'NONONONO', id: 'message-2', parentId: 'room-1', date: '' }
+	{ authorId: 'user-1', content: 'abracadabra', id: 'message-1', parentId: 'room-1', date: '2016-11-16T11:06:45.549Z' },
+	{ authorId: 'user-2', content: 'NONONONO', id: 'message-2', parentId: 'room-1', date: '2016-11-16T11:06:45.549Z' }
 ];
 
 rooms.reverse();
@@ -49,3 +49,12 @@ exports.getMessageById = function(id) {
 	if(col.length) return col[0];
 	else return null;
 };
+
+exports.createMessage = function(roomId, item) {
+	item.authorId = item.author.id;
+	delete item.author;
+	items.push(item);
+	item.id = 'message-' + items.length;
+	item.parentId = roomId;
+	return item;
+}

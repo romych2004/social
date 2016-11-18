@@ -121,6 +121,11 @@ app.get('/api/message/:roomId', function (req, res) {
 		data: messages.getMessagesByRoomId(req.params)
 	});
 });
+app.post('/api/message/:roomId', function (req, res) {
+	res.json({
+		data: messages.createMessage(req.params.roomId, req.body)
+	});
+});
 
 
 
